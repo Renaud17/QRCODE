@@ -40,7 +40,6 @@ with col3:
 with col2:
     st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
     upload =st.file_uploader("Image QRC ici")
-with col5:
     if st.button("Lècture",key=1):
         img = cv2.imread(upload)
         detector = cv2.QRCodeDetector()
@@ -57,6 +56,8 @@ with col5:
             point1 = tuple(bbox[i][0])
             point2 = tuple(bbox[(i+1) % n_lines][0])
             cv2.line(img, point1, point2, color=(255, 0, 0), thickness=2)
+#with col5:
+    
 
 
             
