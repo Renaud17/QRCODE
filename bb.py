@@ -16,8 +16,7 @@ with col1:
         # Creating QR code
         url=pyqrcode.create(text)
         # Saving QR code as  a png file
+        url.show()
         url.png(name, scale =6)
-with col2:
-    st.plotly_chart(url.png(name, scale =6), use_container_width=True)
-    #st.image(url.png(name, scale =6))
+
 
