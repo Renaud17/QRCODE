@@ -6,10 +6,10 @@ from pyqrcode import QRCode
 
 col1, col2= st.beta_columns(2)
 with col1:
-    st.markdown("**Saisissez le texte à convertir**")
-    text=st.text_input("",key=0)
-    st.markdown("**Entrez le nom de l'image à sauvegarder**")
-    img=st.text_input("",key=1)
+    st.markdown("**Saisissez le texte à convertir:**")
+    text=st.text_input("ici",key=0)
+    st.markdown("**Entrez le nom de l'image à sauvegarder:**")
+    img=st.text_input("ici",key=1)
     if st.button("Générer"):
         # Adding extension as .pnf
         name=img+".png"
@@ -19,5 +19,5 @@ with col1:
         url.show()
         url.png(d, scale =6)
 with col2:
-    st.image(url.png(d, scale =6))
+    #st.image(url.png(d, scale =6))
 
