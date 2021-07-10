@@ -1,14 +1,18 @@
 import streamlit as st
-import os
 import pyqrcode
 import png
 import matplotlib.pyplot as plt
 from pyqrcode import QRCode
+import os
+import base64
 
-def load_image(img):
-    im = Image.open(img)
-    image = np.array(im)
-    return image
+#fonction de téléchargement de l'image
+def get_binary_file_downloader_html(bin_file, file_label='File'):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    bin_str = base64.b64encode(data).decode()
+    href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
+    return href
 
 col1, col2= st.beta_columns(2)
 with col1:
@@ -26,5 +30,8 @@ with col1:
         url.png(name, scale =6)
         with col2:
             st.image(name)
+            ## Original image came from cv2 format, fromarray convert into PIL format
+            result = Image.fromarray(original_image)
+            sst.markdown(get_binary_file_downloader_html('name', 'Picture'), unsafe_allow_html=True)
 
 
