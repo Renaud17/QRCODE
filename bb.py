@@ -18,10 +18,10 @@ def get_binary_file_downloader_html(bin_file, file_label='File'):
 
 col1, col2= st.beta_columns(2)
 with col1:
-    st.markdown("**Saisissez le texte à convertir:**")
-    text=st.text_input("",key=0)
-    st.markdown("**Entrez le nom de l'image à sauvegarder:**")
-    img=st.text_input("",key=1)
+    #st.markdown("****")
+    text=st.text_input("Saisissez le texte à convertir:",key=0)
+    #st.markdown("****")
+    img=st.text_input("Entrez le nom de l'image à sauvegarder:",key=1)
     if st.button("Générer"):
         # Adding extension as .pnf
         name=img+".png"
