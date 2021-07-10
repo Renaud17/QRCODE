@@ -30,9 +30,13 @@ with col1:
         # Saving QR code as  a png file
         url.show()
         url.png(name, scale =6)
-        with col2:
-            st.image(name)
-            st.markdown(get_binary_file_downloader_html(name, 'ICI'), unsafe_allow_html=True)
+        st.image(name)
+        st.markdown(get_binary_file_downloader_html(name, 'ICI'), unsafe_allow_html=True)
+        
+        
+        
+#with col2:
+            
             
             
             
