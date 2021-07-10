@@ -32,7 +32,7 @@ with col1:
         url.png(name, scale =6)
         with col2:
             st.image(name)
-            st.markdown(get_binary_file_downloader_html('photo.jpg', 'Picture'), unsafe_allow_html=True)
+            st.markdown(get_binary_file_downloader_html(name, 'Picture'), unsafe_allow_html=True)
             
             
             
