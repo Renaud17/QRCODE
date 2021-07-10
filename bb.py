@@ -6,6 +6,8 @@ from pyqrcode import QRCode
 import os
 import os
 import base64
+from pyzbar import pyzbar
+from PIL import Image
 
 def get_binary_file_downloader_html(bin_file, file_label='File'):
     with open(bin_file, 'rb') as f:
@@ -40,17 +42,17 @@ with col2:
     st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
     upload =st.file_uploader("Image QRC ici")
     if st.button("Lècture",key=1):
-        # Python program to Scan and Read a QR code
-        from qrtools import QR
-        my_QR = QR(filename = "home/user/Desktop/qr.png")
+        #load qr code imge
+        image = Image.open(upload)
+        qr_code = pyzbar.decode(image)[0]
+        #convert into string
+        data= qr_code.data.decode("utf-8")
+        type = qr_code.type
+        text = f"{type}-->, {data}"
+        print("----")
+        print(text)
+        print("----")
 
-        # decodes the QR code and returns True if successful
-        my_QR.decode()
-
-        # prints the data
-        print (my_QR.data)
-        
-    
 
 
             
