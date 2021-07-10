@@ -4,20 +4,6 @@ import png
 import matplotlib.pyplot as plt
 from pyqrcode import QRCode
 import os
-import base64
-from PIL import Image
-
-
-def get_image_download_link(img):
-	"""Generates a link allowing the PIL image to be downloaded
-	in:  PIL image
-	out: href string
-	"""
-	buffered = BytesIO()
-	img.save(buffered, format="JPEG")
-	img_str = base64.b64encode(buffered.getvalue()).decode()
-	href = f'<a href="data:file/jpg;base64,{img_str}">Download result</a>'
-	return href
 
 
 
@@ -35,10 +21,9 @@ with col1:
         # Saving QR code as  a png file
         url.show()
         url.png(name, scale =6)
-	result = Image.fromarray(name)
         with col2:
             st.image(name)
-            st.markdown(get_image_download_link(result), unsafe_allow_html=True)
+            
             
 
 
