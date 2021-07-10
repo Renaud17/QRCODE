@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from pyqrcode import QRCode
 import os
 import base64
+from PIL import Image
 
 #fonction de téléchargement de l'image
 def get_binary_file_downloader_html(bin_file, file_label='File'):
