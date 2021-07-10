@@ -37,9 +37,7 @@ with col1:
         
 with col2:
     st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
-col3, col4, col5 = st.beta_columns([3,2,1])
-with col5:
-    st.button("Générer",key=1)
+    st.button("Lècture",key=1)
             
             
 
