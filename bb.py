@@ -25,6 +25,6 @@ with col1:
         url.show()
         url.png(name, scale =6)
 with col2:
-    st.image(str(url.png))
+    st.image(name)
 
 
