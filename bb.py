@@ -7,11 +7,11 @@ from pyqrcode import QRCode
 col1, col2= st.beta_columns(2)
 
 with col1:
-    NCR = inputcheck(st.text_input("Nombre de Non conformité remontée",value=0,key=0))
-    FNCR = inputcheck(st.text_input("Nombre de fiche de Non conformité remontée",value=0,key=1))
-    NCC = inputcheck(st.text_input("Nombre de Non conformité cloturée",value=0,key=2))
-    FNCC= inputcheck(st.text_input("Nombre de fiche de Non conformité cloturée",value=0, key=3))
-    IDD=email
+    NCR = st.text_input("Nombre de Non conformité remontée",value=0,key=0)
+    FNCR = st.text_input("Nombre de fiche de Non conformité remontée",value=0,key=1)
+    NCC = st.text_input("Nombre de Non conformité cloturée",value=0,key=2))
+    FNCC= st.text_input("Nombre de fiche de Non conformité cloturée",value=0, key=3)
+    
 with col2:
     st.subheader("DATE ET NOM DU CHANTIER")
     Date = st.date_input("Date")
