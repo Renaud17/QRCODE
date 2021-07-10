@@ -38,6 +38,7 @@ with col3:
         
 with col2:
     st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
+    upload = file_uploader(...)
 with col5:
     st.button("Lècture",key=1)
             
