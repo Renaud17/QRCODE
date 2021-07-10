@@ -5,4 +5,4 @@ matplotlib==3.2.2
 plotly==4.4.1
 Pillow
 qrtools
-pyzbar
+pyzbar-0.1.8
