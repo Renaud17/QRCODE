@@ -7,13 +7,19 @@ import os
 import base64
 from PIL import Image
 
-#fonction de téléchargement de l'image
-def get_binary_file_downloader_html(bin_file, file_label='File'):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    bin_str = base64.b64encode(data).decode()
-    href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
-    return href
+result = Image.fromarray(name)
+def get_image_download_link(img):
+	"""Generates a link allowing the PIL image to be downloaded
+	in:  PIL image
+	out: href string
+	"""
+	buffered = BytesIO()
+	img.save(buffered, format="JPEG")
+	img_str = base64.b64encode(buffered.getvalue()).decode()
+	href = f'<a href="data:file/jpg;base64,{img_str}">Download result</a>'
+	return href
+
+
 
 col1, col2= st.beta_columns(2)
 with col1:
@@ -31,8 +37,7 @@ with col1:
         url.png(name, scale =6)
         with col2:
             st.image(name)
-            ## Original image came from cv2 format, fromarray convert into PIL format
-            result = Image.fromarray('name')
-            st.markdown(get_binary_file_downloader_html(result), unsafe_allow_html=True)
+            st.markdown(get_image_download_link(result), unsafe_allow_html=True)
+            
 
 
