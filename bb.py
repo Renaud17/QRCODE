@@ -32,7 +32,7 @@ with col1:
         url.png(name, scale =6)
         with col2:
             st.image(name)
-            st.button(get_binary_file_downloader_html(name, 'QRCODE'), unsafe_allow_html=True)
+            st.markdown(get_binary_file_downloader_html(name, 'QRCODE'), unsafe_allow_html=True)
             
             
             
