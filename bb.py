@@ -2,7 +2,6 @@ import streamlit as st
 import pyqrcode
 import png
 from pyqrcode import QRCode
-from PIL import Image
 
 def load_image(img):
     im = Image.open(img)
@@ -23,9 +22,7 @@ with col1:
         # Saving QR code as  a png file
         url.show()
         url.png(name, scale =6)
-        img=load_image(url.png(name, scale =6))
-  
 with col2:
-    st.image(img)
+    st.pyplot(url.png(name, scale =6))
 
 
