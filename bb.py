@@ -42,17 +42,12 @@ with col2:
     st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
     upload =st.file_uploader("Image QRC ici")
     if st.button("Lècture",key=1):
-        #load qr code imge
-        image = Image.open(upload)
-        qr_code = pyzbar.decode(image)[0]
-        #convert into string
-        data= qr_code.data.decode("utf-8")
-        type = qr_code.type
-        text = f"{type}-->, {data}"
-        print("----")
-        print(text)
-        print("----")
-
+        from qrtools import QR
+        myCode = QR(upload)
+        if myCode.decode():
+          print myCode.data
+          print myCode.data_type
+          print myCode.data_to_string()
 
 
             
