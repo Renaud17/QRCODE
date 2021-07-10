@@ -2,7 +2,7 @@ import streamlit as st
 import pyqrcode
 import png
 from pyqrcode import QRCode
-
+import plotly.express as px
 
 col1, col2= st.beta_columns(2)
 with col1:
@@ -16,8 +16,8 @@ with col1:
         # Creating QR code
         url=pyqrcode.create(text)
         # Saving QR code as  a png file
-        url.show()
-        url.png(name, scale =6)
-#with col2:
+        image=url.png(name, scale =6)
+with col2:
+    st.plotly_chart(image, use_container_width=True)
     #st.image(url.png(name, scale =6))
 
