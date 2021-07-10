@@ -6,7 +6,6 @@ from pyqrcode import QRCode
 import os
 import os
 import base64
-from cv2 import cv2
 
 def get_binary_file_downloader_html(bin_file, file_label='File'):
     with open(bin_file, 'rb') as f:
@@ -41,29 +40,16 @@ with col2:
     st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
     upload =st.file_uploader("Image QRC ici")
     if st.button("Lècture",key=1):
-        import cv2
-        # read the QRCODE image
-        img = cv2.imread(upload)
-        # initialize the cv2 QRCode detector
-        detector = cv2.QRCodeDetector()
-        # detect and decode
-        data, bbox, straight_qrcode = detector.detectAndDecode(img)
-        # if there is a QR code
-        if bbox is not None:
-            print(f"QRCode data:\n{data}")
-            # display the image with lines
-            # length of bounding box
-            n_lines = len(bbox)
-            for i in range(n_lines):
-                # draw all lines
-                point1 = tuple(bbox[i][0])
-                point2 = tuple(bbox[(i+1) % n_lines][0])
-                cv2.line(img, point1, point2, color=(255, 0, 0), thickness=2)
-                # display the result
-                cv2.imshow("img", img)
-                cv2.waitKey(0)
-                cv2.destroyAllWindows()
-                #with col5:
+        # Python program to Scan and Read a QR code
+        from qrtools import QR
+        my_QR = QR(filename = "home/user/Desktop/qr.png")
+
+        # decodes the QR code and returns True if successful
+        my_QR.decode()
+
+        # prints the data
+        print (my_QR.data)
+        
     
 
 
