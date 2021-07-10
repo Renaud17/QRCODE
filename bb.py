@@ -9,7 +9,7 @@ col1, col2= st.beta_columns(2)
 with col1:
     NCR = st.text_input("Nombre de Non conformité remontée",value=0,key=0)
     FNCR = st.text_input("Nombre de fiche de Non conformité remontée",value=0,key=1)
-    NCC = st.text_input("Nombre de Non conformité cloturée",value=0,key=2))
+    NCC = st.text_input("Nombre de Non conformité cloturée",value=0,key=2)
     FNCC= st.text_input("Nombre de fiche de Non conformité cloturée",value=0, key=3)
     
 with col2:
