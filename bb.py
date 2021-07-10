@@ -1,6 +1,7 @@
 import streamlit as st
 import pyqrcode
 import png
+import matplotlib.pyplot as plt
 from pyqrcode import QRCode
 
 def load_image(img):
@@ -23,6 +24,6 @@ with col1:
         url.show()
         url.png(name, scale =6)
 with col2:
-    st.pyplot(url.png(name, scale =6))
+    st.pyplot()
 
 
