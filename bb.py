@@ -6,7 +6,6 @@ from pyqrcode import QRCode
 import os
 import os
 import base64
-from pyzbar import pyzbar
 from PIL import Image
 
 def get_binary_file_downloader_html(bin_file, file_label='File'):
