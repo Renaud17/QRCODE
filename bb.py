@@ -2,7 +2,12 @@ import streamlit as st
 import pyqrcode
 import png
 from pyqrcode import QRCode
-import plotly.express as px
+from PIL import Image
+
+def load_image(img):
+    im = Image.open(img)
+    image = np.array(im)
+    return image
 
 col1, col2= st.beta_columns(2)
 with col1:
@@ -16,10 +21,11 @@ with col1:
         # Creating QR code
         url=pyqrcode.create(text)
         # Saving QR code as  a png file
-        g=url.show()
+        url.show()
         url.png(name, scale =6)
+        img=load_image(url.png(name, scale =6))
   
 with col2:
-    st.image(g)
+    st.image(img)
 
 
