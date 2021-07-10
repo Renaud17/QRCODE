@@ -4,13 +4,14 @@ import png
 import matplotlib.pyplot as plt
 from pyqrcode import QRCode
 import os
+import os
+import base64
 
-
-def get_image_download_link(img,filename,text):
-    buffered = BytesIO()
-    img.save(buffered, format="JPEG")
-    img_str = base64.b64encode(buffered.getvalue()).decode()
-    href =  f'<a href="data:file/txt;base64,{img_str}" download="{filename}">{text}</a>'
+def get_binary_file_downloader_html(bin_file, file_label='File'):
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    bin_str = base64.b64encode(data).decode()
+    href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
     return href
 
 
@@ -31,9 +32,8 @@ with col1:
         url.png(name, scale =6)
         with col2:
             st.image(name)
-            ## Original image came from cv2 format, fromarray convert into PIL format
-            result = Image.fromarray(name)
-            st.markdown(get_image_download_link(result,img_file.name,'Download '+img_file.name), unsafe_allow_html=True)
+            st.markdown(get_binary_file_downloader_html('photo.jpg', 'Picture'), unsafe_allow_html=True)
+            
             
             
 
