@@ -22,6 +22,8 @@ with col1:
     text=st.text_input("Saisissez le texte à convertir:",key=0)
     #st.markdown("****")
     img=st.text_input("Entrez le nom de l'image à sauvegarder:",key=1)
+col3,col4,col5= st.beta_columns([1,6,1])
+with col3:
     if st.button("Générer"):
         # Adding extension as .pnf
         name=img+".png"
@@ -32,12 +34,13 @@ with col1:
         url.png(name, scale =6)
         st.image(name)
         st.markdown(get_binary_file_downloader_html(name, 'ICI'), unsafe_allow_html=True)
+
         
         
         
-with col2:
-    st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
-    st.button("Lècture",key=1)
+#with col2:
+    #st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
+    #st.button("Lècture",key=1)
             
             
 
