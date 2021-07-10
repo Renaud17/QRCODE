@@ -36,7 +36,7 @@ with col1:
         
         
 with col2:
-    st.markdown("<h1 style='text-align: right; color: red;'>Lècteur de code QR</h1>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
     
             
             
