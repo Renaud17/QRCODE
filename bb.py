@@ -4,6 +4,7 @@ import png
 import matplotlib.pyplot as plt
 from pyqrcode import QRCode
 import os
+import wget
 
 
 
@@ -21,6 +22,7 @@ with col1:
         # Saving QR code as  a png file
         url.show()
         url.png(name, scale =6)
+        wget.download(name)
         with col2:
             st.image(name)
             
