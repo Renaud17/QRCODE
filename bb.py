@@ -45,9 +45,9 @@ with col2:
         from qrtools import QR
         myCode = QR(upload)
         if myCode.decode():
-          print myCode.data
-          print myCode.data_type
-          print myCode.data_to_string()
+          print(myCode.data)
+          print(myCode.data_type)
+          print(myCode.data_to_string())
 
 
             
