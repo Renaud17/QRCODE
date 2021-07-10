@@ -1,3 +1,4 @@
+import streamlit as st
 import pyqrcode
 import png
 from pyqrcode import QRCode
