@@ -32,7 +32,7 @@ with col1:
         with col2:
             st.image(name)
             ## Original image came from cv2 format, fromarray convert into PIL format
-            result = Image.fromarray(original_image)
-            st.markdown(get_binary_file_downloader_html('name', 'Picture'), unsafe_allow_html=True)
+            result = Image.fromarray('name')
+            st.markdown(get_binary_file_downloader_html(result), unsafe_allow_html=True)
 
 
