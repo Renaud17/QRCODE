@@ -36,11 +36,10 @@ with col3:
         st.markdown(get_binary_file_downloader_html(name, 'ICI'), unsafe_allow_html=True)
 
         
-        
-        
-#with col2:
-    #st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
-    #st.button("Lècture",key=1)
+with col2:
+    st.markdown("<h3 style='text-align: right; color: black;'>Lècteur de code QR</h3>", unsafe_allow_html=True)
+with col5:
+    st.button("Lècture",key=1)
             
             
 
