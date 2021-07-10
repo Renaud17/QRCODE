@@ -4,4 +4,4 @@ streamlit==0.82.0
 matplotlib==3.2.2
 plotly==4.4.1
 Pillow
-wget
+opencv-python
