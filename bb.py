@@ -41,7 +41,7 @@ with col2:
             
 col3, col4, col5 = st.beta_columns([3,2,1])
 with col5:
-    st.button("Générer")
+    st.button("Générer",key=1)
             
             
 
