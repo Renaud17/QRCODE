@@ -36,7 +36,8 @@ with col1:
         
         
 with col2:
-    st.subheader("Lècteur de code QR")
+    st.markdown("<h1 style='text-align: right; color: red;'>Lècteur de code QR</h1>", unsafe_allow_html=True)
+    
             
             
             
