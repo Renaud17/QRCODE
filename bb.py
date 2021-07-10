@@ -7,7 +7,7 @@ import os
 import base64
 from PIL import Image
 
-result = Image.fromarray(name)
+
 def get_image_download_link(img):
 	"""Generates a link allowing the PIL image to be downloaded
 	in:  PIL image
@@ -35,6 +35,7 @@ with col1:
         # Saving QR code as  a png file
         url.show()
         url.png(name, scale =6)
+	result = Image.fromarray(name)
         with col2:
             st.image(name)
             st.markdown(get_image_download_link(result), unsafe_allow_html=True)
