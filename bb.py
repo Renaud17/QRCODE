@@ -6,7 +6,7 @@ from pyqrcode import QRCode
 import os
 import os
 import base64
-import cv2
+from cv2 import cv2
 
 def get_binary_file_downloader_html(bin_file, file_label='File'):
     with open(bin_file, 'rb') as f:
