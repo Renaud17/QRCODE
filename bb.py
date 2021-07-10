@@ -35,7 +35,8 @@ with col1:
         
         
         
-#with col2:
+with col2:
+    st.subheader("Lècteur de code QR")
             
             
             
