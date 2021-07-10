@@ -18,7 +18,7 @@ def get_binary_file_downloader_html(bin_file, file_label='File'):
 
 col1, col2= st.beta_columns(2)
 with col1:
-    #st.markdown("****")
+    st.subheader("Générateur de code QR")
     text=st.text_input("Saisissez le texte à convertir:",key=0)
     #st.markdown("****")
     img=st.text_input("Entrez le nom de l'image à sauvegarder:",key=1)
