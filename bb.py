@@ -24,8 +24,7 @@ with col1:
         # Saving QR code as  a png file
         url.show()
         url.png(name, scale =6)
-        st.image(name)
-#with col2:
-    #st.image(name)
+        with col2:
+            st.image(name)
 
 
