@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import pyqrcode
 import png
 import matplotlib.pyplot as plt
@@ -24,6 +25,6 @@ with col1:
         url.show()
         url.png(name, scale =6)
 with col2:
-    st.pyplot()
+    st.image(str(url.png))
 
 
