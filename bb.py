@@ -11,7 +11,7 @@ def get_binary_file_downloader_html(bin_file, file_label='File'):
     with open(bin_file, 'rb') as f:
         data = f.read()
     bin_str = base64.b64encode(data).decode()
-    href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Download {file_label}</a>'
+    href = f'<a href="data:application/octet-stream;base64,{bin_str}" download="{os.path.basename(bin_file)}">Télécharger {file_label}</a>'
     return href
 
 
@@ -32,7 +32,7 @@ with col1:
         url.png(name, scale =6)
         with col2:
             st.image(name)
-            st.markdown(get_binary_file_downloader_html(name, 'Picture'), unsafe_allow_html=True)
+            st.button(get_binary_file_downloader_html(name, 'QRCODE'), unsafe_allow_html=True)
             
             
             
